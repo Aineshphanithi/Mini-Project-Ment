@@ -1,0 +1,31 @@
+body{
+    overflow-x: hidden;
+}
+.navbar-custom{
+    background-color: black;
+}
+.navbar .nav-link{
+    font-size:11px;
+    text-transform: uppercase;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.navbar .nav-item.active{
+    border-left: #444 3px solid;
+}
+
+.carousel-item{
+    height :450px;
+
+}
+
+
+  .logo-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+
