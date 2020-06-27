@@ -1,14 +1,14 @@
-import React ,{useState}from 'react'
-import Posts from  './Posts'
-import Post from './Post'
-import CreatePost from './CreatePost'
-import{Router,Link} from "@reach/router"
+import React ,{useState}from 'react';
+import Posts from  './Posts';
+import Post from './Post';
+import CreatePost from './CreatePost';
+import{Router,Link} from "@reach/router";
 //import { Menu } from 'antd';
 import UpdatePost from './UpdatePost';
-import SignIn from './SignIn'
-import SignUp from './SignUp'
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
 //import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
-import MyPosts from './MyPosts'
+import MyPosts from './MyPosts';
 import Particles from 'react-particles-js';
 
 

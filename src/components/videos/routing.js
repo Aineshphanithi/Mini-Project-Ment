@@ -63,11 +63,11 @@ class CuratedContents extends Component{
   render(){
     console.log(this.state)
     return(
-      <div className="videos">
+      <div className="container">
         
         <SearchBar onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}/>
-        <div class="row">
-          <div class="container column">
+        <div className="row">
+          <div className="container mt-3 ml-3 col-md-8">
             <VideoDetail 
               video={this.state.selectedVideo} 
               onCompletion={comp => this.videoCompleted(comp)} 
@@ -76,7 +76,7 @@ class CuratedContents extends Component{
             />
         
           </div>
-          <div class="container columnList">
+          <div className="col-md ml-5">
             <VideoList
               onVideoSelect={userSelected => this.setState({selectedVideo: userSelected})}
               completed={this.state.completed}

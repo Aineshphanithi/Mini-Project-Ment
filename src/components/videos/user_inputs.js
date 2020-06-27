@@ -6,6 +6,7 @@ import { getUserChoice , updateUserChoice } from '../../actions/UserActions';
 import PropTypes from 'prop-types';
 import "./complete.css";
 
+
 class UserInputs extends Component{
     constructor(props){
         
@@ -115,11 +116,11 @@ class UserInputs extends Component{
                     
                     <br/>
                     <label >
-                        <input id="btnforChange" type="submit" value="Save & Proceed" onClick={this.handelSubmit}/>
+                        <input id="btnforChange" className="btn" type="submit" value="Save & Proceed" onClick={this.handelSubmit}/>
                     </label>
 
                     <label >
-                        <input id="btnforChange" type="button" value="skip" onClick={this.handelSkip}/>
+                        <input id="btnforChange" className="btn" type="button" value="skip" onClick={this.handelSkip}/>
                     </label>
 
                 </form>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 //import "./player.css"
-import "./complete.css"
-import { navigate } from "@reach/router"
+import "./complete.css";
+import { navigate } from "@reach/router";
 const VideoDetail = (props) => {
     
 
@@ -23,7 +23,6 @@ const VideoDetail = (props) => {
             props.onCompletion(true)
             setWatchComplete(false)
         }
-
     }
     const onChange=()=>{
         navigate('/userInput')
@@ -50,14 +49,11 @@ const VideoDetail = (props) => {
                     }>
                     <h2>Task:{props.motivation[props.index]}</h2><span class="tooltiptext">Do this to feel good(optional)</span>
                 </div>
-                <button onClick={onNextVideo} className={
-                    watchComplete ? "button btnIsComplete":"button btnIsNotComplete tooltip"
-                    }>
-                    Go to next video<span class={watchComplete ? "tooltiptextIncomplete":"tooltiptext"}>on completion of Video(70%)</span>
+                <button onClick={onNextVideo} className="btn btn-success ml-3 mt-3">
+                    Go to next video
                 </button>
-                <button onClick={onChange} className={"button btnforChange tooltip"
-                    }>
-                    Change<span class={watchComplete ? "tooltiptextIncomplete":"tooltiptext"}>Change your Preferences</span>
+                <button onClick={onChange} className="btn btn-success ml-3 mt-3">
+                    Change your preferences
                 </button>
 
             </div> 

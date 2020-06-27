@@ -26,7 +26,7 @@ class Home extends Component {
                     <div className="carousel-caption d-none d-sm-block text-right mb-5">
                         <hi className="display-3">Heading One</hi>
                         <p className="lead">"The thing everyone should realise is that the key to happiness is being happy by yourself and for yourself."</p>
-                        <a href="#" className="btn btn-danger btn-lg">Sign up Now</a>
+                        <a href="sign_up" className="btn btn-danger btn-lg">Sign up Now</a>
                     </div>
                     </div>
                 </div>

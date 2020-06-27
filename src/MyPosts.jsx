@@ -1,8 +1,8 @@
-import React ,{useState,useEffect}from 'react'
+import React ,{useState,useEffect}from 'react';
 //import { PageHeader } from 'antd';
 import MyPostsSnippet from './MyPostsSnippet';
-import _ from 'lodash'
-import db from './firebase'
+import _ from 'lodash';
+import db from './firebase';
 //import { Menu } from 'antd';
 //import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import{Router,Link} from "@reach/router"
