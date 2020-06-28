@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import "./complete.css"
+=======
+//import "./complete.css"
+>>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
 
 const VideoListItem = (props) => {
     

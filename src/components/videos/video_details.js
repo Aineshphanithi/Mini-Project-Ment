@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import ReactPlayer from 'react-player';
 //import "./player.css"
 import "./complete.css";
 import { navigate } from "@reach/router";
+=======
+import ReactPlayer from 'react-player'
+import "./player.css"
+////import "./complete.css"
+import { navigate } from "@reach/router"
+>>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
 const VideoDetail = (props) => {
     
 
     const video = props.video;
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
     const [watchComplete, setWatchComplete] =useState(false)
     // if(!video){
     //     return <div>Loading...</div>;
@@ -23,6 +34,10 @@ const VideoDetail = (props) => {
             props.onCompletion(true)
             setWatchComplete(false)
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
     }
     const onChange=()=>{
         navigate('/userInput')
@@ -33,7 +48,11 @@ const VideoDetail = (props) => {
             setWatchComplete(true)
         }
     }
+<<<<<<< HEAD
     console.log(props)
+=======
+    console.log(props,watchComplete)
+>>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
     return (
         <div>
             
@@ -49,6 +68,7 @@ const VideoDetail = (props) => {
                     }>
                     <h2>Task:{props.motivation[props.index]}</h2><span class="tooltiptext">Do this to feel good(optional)</span>
                 </div>
+<<<<<<< HEAD
                 <button onClick={onNextVideo} className="btn btn-success ml-3 mt-3">
                     Go to next video
                 </button>
@@ -58,6 +78,20 @@ const VideoDetail = (props) => {
 
             </div> 
            
+=======
+                <button onClick={onNextVideo} className={
+                    watchComplete ? "button btnIsComplete":"button btnIsNotComplete tooltip"
+                    }>
+                    Go to next video<span class={watchComplete ? "tooltiptextIncomplete":"tooltiptext"}>on completion of Video(70%)</span>
+                </button>
+               
+
+            </div> 
+            <button onClick={onChange} className={"button btnforChange tooltip"
+                    }>
+                    Change<span class={watchComplete ? "tooltiptextIncomplete":"tooltiptext"}>Change your Preferences</span>
+             </button>
+>>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
             {/* <div className="details">
                 <div>{video.snippet.title}</div>
                 <div>{video.snippet.description}</div>
