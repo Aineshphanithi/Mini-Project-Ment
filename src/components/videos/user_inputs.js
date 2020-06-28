@@ -90,7 +90,7 @@ class UserInputs extends Component{
                     
                     <div className="formMain">
                     <div id="formP">
-                        <h2>Have You gone through any of these situatons?</h2>
+                        <h2>Have You ever gone through any of these situations?</h2>
                         <input  type ="checkbox" id = " cb1" name="value1" value=" abuse" onChange={this.handelChange}/>
                         <label   for="cb1">Abused</label>
                         <br/>
