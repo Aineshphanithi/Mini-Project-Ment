@@ -1,0 +1,3 @@
+export const GET_VOLUNTEERS = 'GET_VOLUNTEERS'; 
+export const GET_USER_CHOICE = 'GET_USER_CHOICE'; 
+export const UPDATE_USER_CHOICE = 'UPDATE_USER_CHOICE'; 
