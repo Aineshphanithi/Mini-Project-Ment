@@ -38,17 +38,17 @@ const CreatePost=(props)=>{
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <Link to="/postapp" style={{ float:'right'}}>Posts</Link>
+                        <Link to="/postapp" className="mr-3"><i className="fa fa-comment"></i>Posts</Link>
                     </li>
                     {props.user && 
                        <li class="nav-item">
-                        <Link to="/create_post" style={{ float:'right'}}>Create Posts</Link>
+                        <Link to="/create_post" className="mr-3"><i class="fa fa-rocket" aria-hidden="true"></i>Create Posts</Link>
                        </li>
 
                     }
                      {props.user &&
                        <li class="nav-item">
-                         <Link to={`/blogs/${props.user.uid}/posts`} style={{ float:'right'}}>My Posts</Link>
+                         <Link to={`/blogs/${props.user.uid}/posts`}><i className="fa fa-certificate"></i> My Posts</Link>
                        </li>
                     }
                 </ul>
@@ -62,7 +62,7 @@ const CreatePost=(props)=>{
                 }}
                 title="Create Post"
             /> */}
-            <h3>Create Post</h3>
+            <h3><strong>Create Post</strong></h3>
         </div>
         <div className="post_inputs_container">
             <div className="post_input_container">
@@ -84,7 +84,7 @@ const CreatePost=(props)=>{
                 </div>
             </div>
             <div className="post_input_button">
-                <button type="primary" size="large" onClick={onCreatePost}>
+                <button type="primary" className="btn btn-primary my-3" size="large" onClick={onCreatePost}>
                     Create Post
                 </button>
             </div>

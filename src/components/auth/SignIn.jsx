@@ -12,6 +12,14 @@ const SignIn = (props) => {
     const onEmailChange = (event) => setEmail(event.target.value)
     const onPasswordChange=(event)=>setPassword(event.target.value)
     const onSignIn=()=>{
+        if (email == '')
+            alert("Email empty");
+        else if(!email.includes('@'))
+            alert('Invalid Email');
+        else if (password == '')
+            alert("Password is empty");
+       
+        else {
         console.log(email,password)
         auth.signInWithEmailAndPassword(email, password)
         .then(function(result){
@@ -24,7 +32,7 @@ const SignIn = (props) => {
           });
           setEmail('')
           setPassword('')
-          navigate(`/`)
+        }
     }
 
     const uiConfig = {
@@ -73,7 +81,7 @@ const SignIn = (props) => {
                                     <a href="sign_up">Don't have an account? Sign up now</a>
                                 </div>
                                 <div className="post_input_button">
-                                <button onClick={onSignIn} className="btn btn-primary btn-block">Submit</button>
+                                <button type="submit" onClick={onSignIn} className="btn btn-primary btn-block">Submit</button>
                                 </div>
                         </div>
                     </div>

@@ -11,14 +11,28 @@ const SignUp = (props) => {
     const onEmailChange = (event) => setEmail(event.target.value)
     const onPasswordChange=(event)=>setPassword(event.target.value)
     const onSignUp=()=>{
-        auth.createUserWithEmailAndPassword(email, password).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-          });
-          setEmail('')
-          setPassword('')
+        if(email == '')
+            alert("Please enter Email");
+        else if(!email.includes('@'))
+            alert('Invalid Email');
+        else if (password == '')
+            alert("Password is empty");
+        else if (!(password.match(/[a-z]/g) && password.match( 
+            /[A-Z]/g) && password.match( 
+            /[0-9]/g) && password.match( 
+            /[^a-zA-Z\d]/g) && password.length >= 8)){
+                alert("Password should have at least 8 characters and should contain at least 1 uppercase character, 1 lowercase character, 1 digit and 1 special character.");
+        }
+        else{
+            auth.createUserWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+            });
+            setEmail('')
+            setPassword('')
+        }
         
     }
     const uiConfig = {

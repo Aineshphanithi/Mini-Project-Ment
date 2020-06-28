@@ -33,18 +33,16 @@ class Home extends Component {
                 <div className="carousel-item carousel-image-2">
                     <div>
                     <div className="carousel-caption d-none d-sm-block mb-5">
-                        <hi className="display-3">Heading Two</hi>
+                        <hi className="display-3">Talk to our Volunteers who will be available for you</hi>
                         <p className="lead">"Two things prevent us from happiness;living in the past and observing others."</p>
-                        <a href="#" className="btn btn-primary btn-lg">Learn More</a>
                     </div>
                     </div>
                 </div>
                 <div className="carousel-item carousel-image-3">
                     <div>
                     <div className="carousel-caption d-none d-sm-block text-right mb-5">
-                        <hi className="display-3">Heading Three</hi>
+                        <hi className="display-3">The journey of a thousand miles begins with a single step.</hi>
                         <p className="lead">"Be happy, it drives people crazy"</p>
-                        <a href="#" className="btn btn-success btn-lg">Learn More</a>
                     </div>
                     </div>
                 </div>
@@ -116,20 +114,7 @@ class Home extends Component {
 
 
 
-            <section id="video-play">
-                <div className="dark-overlay">
-                    <div className="row">
-                    <div className="col">
-                        <div className="container p-5">
-                        <a href="#" className="video" data-video="https://www.youtube.com/embed/0NV1KdWRHck" data-toggle="modal" data-target="#videoModal">
-                            <i className="fas fa-play fa-3x"></i>
-                        </a>
-                        <h1>Check this video that we have specially chosen for you</h1>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </section>
+            
 
             </>
         )
