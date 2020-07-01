@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 //import {Card} from 'antd';
-import {Link} from "@reach/router"
+import {Link, navigate} from "@reach/router"
 import db from './firebase'
 import CommentSnipet from'./AddComment';
 import _ from 'lodash'
@@ -40,6 +40,7 @@ const CreateComment=(props) => {
 
     const handelComment =()=>{
         db.collection('posts').doc(props.id).collection('comments').add({'comment':input})
+        navigate(`/postapp`)
     }
     console.log(comments,title,content)
     return (

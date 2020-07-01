@@ -9,7 +9,8 @@ import VideoList from './video_list';
 import VideoDetail from './video_details';
 import "./complete.css"
 import db from '../../firebase'
-const API_KEY =" "//"AIzaSyALY8xL3Y85VTF27ABKdd4HRTihe13beAA";
+import { navigate } from '@reach/router';
+const API_KEY ="AIzaSyALY8xL3Y85VTF27ABKdd4HRTihe13beAA";//"AIzaSyDE2WFy_oZsNwPSnFdKbMBtcXfV68UVkDM"
 
 
 
@@ -40,49 +41,60 @@ class CuratedContents extends Component{
     componentDidMount(){
       this.props.getVolunteers();
       console.log(this.props,"this is video section")
-      this.videoSearch(this.props.mental);
+      
+      var dataset
+      db.collection('users').doc(this.props.user.uid).get().then(function(doc){
+        if (doc.exists) {
+            //searchTerm=searchTerm+doc.data.videoSearchM;
+            dataset=doc.data();
+            console.log("Document data in video:", doc.data(),dataset.UserVideo,dataset.VideoSearchM);
+                  
+          } 
+        else{
+          console.log("video preference not found")
+        }
+       return dataset;
+        //this.getVideo(searchTerm+dataset.VideoSearchM, dataset.UserVideo)
+      }).then((dataset)=>{
+          console.log(dataset,this.state.index)
+          this.setState({index:dataset.UserVideo%50})
+          this.setState({indexm:dataset.UserVideo%8})
+          //this.getVideo(searchTerm+dataset.VideoSearchM)
+          var userVideos
+          YTSearch({key: API_KEY, term: this.props.mental+dataset.VideoSearchM,maxValue: 100},(data) => {
+            userVideos=data;
+            console.log("fetched user data",this.state)
+            this.videoSearch(userVideos);
+          })
+            
+          
+          
+          //this.state.selectVideo=this.state.videos[this.state.index];
+        }
+      )
     }
   
   
   videoCompleted = (completed) => {
-    
+    console.log("videoCompleted")
     this.setState({completed:completed});
+    
   }
-  getVideo = (SearchVideo) =>{
+  getVideo = () =>{
     
+    console.log("Retrieving the video")
+    this.setState({selectedVideo:this.state.videos[this.state.index]});
     
-    YTSearch({key: API_KEY, term: SearchVideo,maxValue: 100},(data) => {
-      this.state.videos=data;
-    });
-    this.state.selectVideo=this.state.videos[this.state.index];
   }
   
-  videoSearch = (searchTerm) => {
-    console.log("hello",searchTerm,this.state)
-    var dataset
+  videoSearch = (userVideos) => {
+    //console.log("hello",searchTerm,this.state, db.collection('users').doc(this.props.user.uid))
     
-    db.collection('users').doc(this.props.user.uid).get().then(function(doc){
-      if (doc.exists) {
-          //searchTerm=searchTerm+doc.data.videoSearchM;
-          dataset=doc.data();
-          console.log("Document data in video:", doc.data(),dataset.UserVideo,dataset.VideoSearchM);
-                
-        } 
-      else{
-        console.log("video preference not found")
-      }
-     return dataset;
-      //this.getVideo(searchTerm+dataset.VideoSearchM, dataset.UserVideo)
-    }).then((dataset)=>{
-        console.log(dataset,this.state.index)
-        this.setState({index:dataset.UserVideo%50})
-        this.setState({indexm:dataset.UserVideo%8})
-        this.getVideo(searchTerm+dataset.VideoSearchM)
+    this.setState({videos:userVideos});
+    
+    this.getVideo()
+    console.log("user videos loaded")
 
-    })
-    
-    
-      
   }
   
   render(){
@@ -92,7 +104,7 @@ class CuratedContents extends Component{
         
         <SearchBar onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}/>
         <div class="row">
-          <div class="container column">
+          <div className="container mt-3 ml-3 col-md-8">
             <VideoDetail 
               video={this.state.selectedVideo} 
               onCompletion={comp => this.videoCompleted(comp)} 
@@ -101,7 +113,7 @@ class CuratedContents extends Component{
             />
         
           </div>
-          <div class="container columnList">
+          <div className="col-md ml-5">
             <VideoList
               onVideoSelect={userSelected => this.setState({selectedVideo: userSelected})}
               completed={this.state.completed}

@@ -1,5 +1,6 @@
 import React ,{useState}from 'react'
 import Posts from  './Posts'
+import About from './components/pages/About'
 import Post from './Post'
 import MentTransparent from './components/Images/MentTransparent.png';
 import CreatePost from './CreatePost'
@@ -15,6 +16,7 @@ import MyPostsSnippet from './MyPostsSnippet';
 import store from './store';
 import {Provider} from 'react-redux';
 //import Header from './components/layout/Header'
+import db from './firebase'
 import Footer from './components/layout/Footer'
 import Volunteers from './components/volunteer/Volunteers'
 import Profile from './components/volunteer/Profile';
@@ -23,20 +25,33 @@ import Home from './components/pages/Home';
 import CuratedContent from './components/videos/routing'
 import UserInputs from './components/videos/user_inputs'
 import CreateComment from './creatComment'
+import { updateUserChoice } from './actions/UserActions';
 //import 'antd/dist/antd.css';
 //import "./components/videos/complete.css"
 //import "./components/layout/Header.css"
-
 //const {SubMenu} = Menu;
+
 function App(props){
     const [user,setUser]=useState(false)
+    let userChoice=false;
     auth.onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
           // ...
           setUser(user)
-          navigate("/")
+          
+          db.collection('users').doc(user.uid).get().then(function(doc){
+          if (doc.exists) {
+            console.log("got document in user prefernece")
+            userChoice=true;
+          }
+          else{
+            userChoice=false;
 
+          }});
+          
+          navigate("/")
+          
         } 
         else {
           // User is signed out.
@@ -59,8 +74,21 @@ function App(props){
             // An error happened.
           });
       }
-      
-    console.log(user,"routing report on User")  
+      const userChoiceUpdate=()=>{
+        db.collection('users').doc(user.uid).get().then(function(doc){
+          if (doc.exists) {
+            console.log("got document in user prefernece")
+            userChoice=true;
+            navigate('/videos')
+          }
+          else{
+            userChoice=false;
+
+          }});
+          
+      }
+    console.log(user,"routing report on User")
+    
     return (
       <Provider store={store}>
          <nav className ="navbar navbar-expand-sm navbar-dark navbar-custom">
@@ -80,10 +108,17 @@ function App(props){
                   <Link style={{float:'right',marginLeft:'20px'}} to="/sign_in">VIDEOS</Link>
                   </li>                
                   :
-                  <li className="nav-item">
-                  <Link style={{float:'right',marginLeft:'20px'}} to="/videos">VIDEOS</Link>
-                  </li>
-                }
+                  
+                    <li className="nav-item">
+                      {!userChoice ?
+                      <Link style={{float:'right',marginLeft:'20px'}} to='/userInput' onClick={userChoiceUpdate}>VIDEOS</Link>
+                    :
+                      <Link style={{float:'right',marginLeft:'20px'}} to="/videos">VIDEOS</Link>
+                    }
+                      </li>
+                    
+                  
+              }
                 {!user ?  
                   <li className="nav-item">
                   <Link style={{float:'right',marginRight:'20px',marginLeft:'20px'}} to="/sign_in">VOLUNTEERS</Link>
@@ -112,22 +147,21 @@ function App(props){
          {/* <Header user={user}/> */}
           <div className="app_container main">
             <Router>
-                  
                   <SignUp path="sign_up"/>
                   <SignIn path="sign_in"/>
                   <PostApp path ="postapp" user={user}/>
-                  <Home path="home" />
+                  <Home path="home" default/>
                   <Volunteers path="volunteers"/>
                   <Chat path="chat" user={user}/>
                   <CuratedContent path="videos" user={user} />
                   <Profile path="profile/:id" user={user}/>
-                  <UserInputs path="userInput" user={user} default/>
+                  <UserInputs path="userInput" user={user} />
                   <MyPosts path="blogs/:uid/posts" user={user}/>
                   <CreatePost path="create_post" user={user}/>
                   <Post path="post/:id"/>
                   <UpdatePost path="update_post/:id" user={user}/>
                   <CreateComment path="create_comment/:id" user={user}/>
-
+                  <About path="/about"/>
               </Router>
 
           </div>

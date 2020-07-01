@@ -1,8 +1,10 @@
 import React,{useState} from 'react';
 //import { PageHeader ,Input,Button} from 'antd';
+import firebase from 'firebase';
 import {navigate} from '@reach/router'
 import {auth} from './firebase'
 import "./components/videos/complete.css"
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 const SignUp = (props) => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
@@ -13,53 +15,70 @@ const SignUp = (props) => {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
+            alert('error')
             // ...
-          });
-          setEmail('')
-          setPassword('')
-        navigate('/userInput')
+          })
+          .then(()=>{
+              
+          })
+          console.log(props)
+          alert('user signed up successfully')
+        setEmail('')
+        setPassword('')
+        navigate('/')
+    }
+    const uiConfig = {
+        // Popup signin flow rather than redirect flow.
+       signInFlow: 'popup',
+       // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+       signInSuccessUrl: '/Home',
+       // We will display Google and Facebook as auth providers.
+       signInOptions: [
+       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+   //firebase.auth.FacebookAuthProvider.PROVIDER_ID
+       ]
     }
     return(
-        <div className = "Sign_up_container">
-             <div className ="page_header_container">
-            {/* <PageHeader
-                style={{
-                    border: '1px solid rgb(235, 237, 240)',
-                }}
-                title="Sign Up"
-            /> */}
-            <h2>Sign Up</h2>
+        <div className="row">
+                <div className="col-md-6 mx-auto">
+                    <div className="card">
+                        <div className="card-body">
+                            <h1 className="text-center pb-4 pt-3">
+                                <span className="text-primary">
+                                    <i className="fas fa-lock"></i> Login
+                                </span>
+                            </h1>
+                            
+                                <div className="form-group">
+                                    <label htmlFor="email">Email</label>
+                                    <input type="text"
+                                    className="form-control" 
+                                    name="email" 
+                                    required
+                                    onChange={onEmailChange}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password">password</label>
+                                    <input type="password"
+                                    className="form-control" 
+                                    name="password" 
+                                    required
+                                    onChange={onPasswordChange}
+                                    />
+                                </div>
+                                <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
+                                <div>
+                                    <a href="sign_up">Don't have an account? Sign up now</a>
+                                </div>
+                                <div className="post_input_button">
+                                <button onClick={onSignUp} className="btn btn-primary btn-block">Submit</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-            <div className="sign_up_container_inputs" style ={{marginTop : "20px" }}>
-            <div className="post_input_container">
-                <div className="post_input_title">
-                    <h2>Email</h2>
-                </div>
-                <div className = "post_input">
-                    <input placeholder="Email"  onChange={onEmailChange}/>
-                </div>
-            </div>
-            <div className="post_input_container">
-                <div className="post_input_title">
-                    <h2>Password</h2>
-                </div>
-                <div className = "post_input">
-                    <input placeholder="Password" onChange={onPasswordChange}/>
-                </div>
-            </div>
-            <div style ={{width:'100%'}}>
-                <div style={{float:'left'}}>
-                    <a href="sign_in">Already have an account,Sign In</a>
-                </div>
-                <div className="post_input_button">
-                <button type="primary" size="large" onClick= {onSignUp}>
-                    SignUp
-                </button>
-                </div>
-            </div>
-            
-        </div>
-        </div>
     )
 }
 export default SignUp;

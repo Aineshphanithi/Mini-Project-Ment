@@ -31,7 +31,7 @@ const CreatePost=(props)=>{
                 let postId={Did}
                 postRef.add(postId)
             })
-        navigate(`/posts`)
+        navigate(`/postapp`)
     }
 
     return(
