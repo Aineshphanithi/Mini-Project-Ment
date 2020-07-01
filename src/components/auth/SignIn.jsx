@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 //import { PageHeader ,Input,Button} from 'antd';
 import {auth} from '../../firebase'
 import { navigate } from "@reach/router"
-import "../videos/complete.css"
+import "../videos/complete.css";
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 

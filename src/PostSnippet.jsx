@@ -39,28 +39,17 @@ const PostSnippet=(props) => {
                     }
                     </p>
                     
-<<<<<<< HEAD
-                    <Link to={`/blogs/${props.uid}`} style ={{marginRight : '15px', float: 'left'}}>
-                        Read Full Article
-                    </Link> 
-                    <p className = "article_content">
-=======
                     <Link to={`/create_comment/${props.id}`} style ={{marginRight : '15px', float: 'left'}}>
                         Read Full Article
                     </Link> 
                     
                     {/* <p className = "article_content">
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
                     {
                         props.content.split('\n').map((paragraph,idx)=>{
                             return <p key = {idx}>{paragraph}</p>;
                         })
                     }
-<<<<<<< HEAD
-                    </p>  
-=======
                     </p>   */}
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
                 </div>
             </div>
         </div>

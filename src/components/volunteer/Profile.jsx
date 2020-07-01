@@ -23,7 +23,7 @@ import { GET_VOLUNTEERS } from '../../actions/types';
         <>
              
         <section class="container">
-            <h1 class="display-4 m-3">Volunteer Details {this.state.volunteerID}</h1>
+            <h1 class="display-4 m-3">Volunteer Details</h1>
             <div class="line"></div>
 
         

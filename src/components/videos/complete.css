@@ -30,11 +30,7 @@
 .columnList{
     
     float: right;
-<<<<<<< HEAD
-    width: 108%;
-=======
     width: 28%;
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
     
 }
   .row{
@@ -65,11 +61,7 @@
     border-radius: 6px;
     padding: 10px 0;
     
-<<<<<<< HEAD
-    /* Position the tooltip */
-=======
     
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
     position: absolute;
     z-index: 2;
   }

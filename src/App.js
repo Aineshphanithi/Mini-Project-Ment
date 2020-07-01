@@ -4,20 +4,11 @@ import Post from './Post'
 import MentTransparent from './components/Images/MentTransparent.png';
 import CreatePost from './CreatePost'
 import{Router,Link, navigate} from "@reach/router"
-<<<<<<< HEAD
-
 import UpdatePost from './UpdatePost';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 //import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
-import {auth} from './firebase';
-=======
-import UpdatePost from './UpdatePost';
-import SignIn from './SignIn'
-import SignUp from './SignUp'
-//import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import {auth} from './firebase'
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
 import PostApp from './PostApp';
 import MyPosts from './MyPosts';
 import MyPostsSnippet from './MyPostsSnippet';
@@ -31,16 +22,11 @@ import Chat from './components/chat/Chat';
 import Home from './components/pages/Home';
 import CuratedContent from './components/videos/routing'
 import UserInputs from './components/videos/user_inputs'
-<<<<<<< HEAD
-//import 'antd/dist/antd.css';
-import "./components/videos/complete.css"
-import "./components/layout/Header.css"
-=======
-import CreateComment from './creatComment'
+import CreateComment from './creatComment';
+import About from './components/pages/About';
 //import 'antd/dist/antd.css';
 //import "./components/videos/complete.css"
 //import "./components/layout/Header.css"
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
 
 //const {SubMenu} = Menu;
 function App(props){
@@ -51,10 +37,6 @@ function App(props){
           // ...
           setUser(user)
           navigate("/")
-<<<<<<< HEAD
-=======
-
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
         } 
         else {
           // User is signed out.
@@ -63,10 +45,6 @@ function App(props){
           // ...
         }
       });
-<<<<<<< HEAD
-=======
-
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
       const onSignOut=()=>{
         console.log('signing out',props)
         auth.signOut().then(function(){
@@ -80,10 +58,7 @@ function App(props){
             // An error happened.
           });
       }
-<<<<<<< HEAD
-=======
       
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
     console.log(user,"routing report on User")  
     return (
       <Provider store={store}>
@@ -140,41 +115,24 @@ function App(props){
                   <SignUp path="sign_up"/>
                   <SignIn path="sign_in"/>
                   <PostApp path ="postapp" user={user}/>
-<<<<<<< HEAD
                   <Home path="home" default/>
-                  <Volunteers path="volunteers"/>
-                  <Chat path="chat" user={user}/>
-                  <CuratedContent path="videos" user={user}/>
-                  <Profile path="profile/:id" user={user}/>
-                  <UserInputs path="userInput" user={user} />
-=======
-                  <Home path="home" />
                   <Volunteers path="volunteers"/>
                   <Chat path="chat" user={user}/>
                   <CuratedContent path="videos" user={user} />
                   <Profile path="profile/:id" user={user}/>
-                  <UserInputs path="userInput" user={user} default/>
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
+                  <UserInputs path="userInput" user={user}/>
                   <MyPosts path="blogs/:uid/posts" user={user}/>
                   <CreatePost path="create_post" user={user}/>
                   <Post path="post/:id"/>
                   <UpdatePost path="update_post/:id" user={user}/>
-<<<<<<< HEAD
-
-=======
                   <CreateComment path="create_comment/:id" user={user}/>
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
+                  <About path="/about"/>
 
               </Router>
 
           </div>
-<<<<<<< HEAD
-          <Footer/>
-        </Provider>
-=======
         <Footer/>
       </Provider>
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
         
     )
 

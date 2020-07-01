@@ -13,11 +13,7 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-<<<<<<< HEAD
-  var db=firebase.firestore();
-=======
   const db=firebase.firestore();
->>>>>>> 56418bc0f612d2a742b05a8cbc9906240ff5ae15
 
   export const auth=firebase.auth()
   export const firestore=firebase.firestore
