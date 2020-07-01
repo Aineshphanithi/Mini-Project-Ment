@@ -3,7 +3,6 @@ import React ,{useState,useEffect}from 'react'
 import PostSnippet from './PostSnippet';
 import _ from 'lodash'
 import db from './firebase'
-
 const Posts=(props)=>{
     const [posts,setPosts]=useState([])
     useEffect(()=>{

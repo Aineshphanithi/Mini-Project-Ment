@@ -3,6 +3,7 @@ import './Volunteer.css';
 import { Link } from '@reach/router';
 import { connect } from 'react-redux';
 import { GET_VOLUNTEERS } from '../../actions/types';
+import ParticleBg from './ParticleBg';
 
 class Volunteer extends Component {
 
@@ -17,8 +18,10 @@ class Volunteer extends Component {
     render() {
         return (
             <>
+            
             <div className="container">
                 <div className="row my-5">
+                    
                 {this.props.volunteers.map(v=>(
                         <div className="flip-card mb-5 col-md-4">
                             <div className="flip-card-inner">
@@ -40,6 +43,7 @@ class Volunteer extends Component {
                             <Link to={`/profile/${v.id}`} className = "mt-1 btn btn-primary">Connect</Link>
                         </div> 
                 ))}
+               
                 
                 </div>
             </div>  

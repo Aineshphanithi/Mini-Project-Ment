@@ -60,7 +60,7 @@ const UpdatePost=(props)=>{
                     }
                      {props.user &&
                        <li class="nav-item">
-                         <Link to={`/blogs/${props.user.uid}/posts`} style={{ float:'right'}}>My Posts</Link>
+                         <Link to={`/blogs/${props.user.uid}/posts`} style={{ float:'right'}}><i className="fa fa-certificate"></i>My Posts</Link>
                        </li>
                     }
                 </ul>

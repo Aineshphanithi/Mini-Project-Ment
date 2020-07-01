@@ -23,7 +23,6 @@ const VideoDetail = (props) => {
             props.onCompletion(true)
             setWatchComplete(false)
         }
-
     }
     const onChange=()=>{
         navigate('/userInput')

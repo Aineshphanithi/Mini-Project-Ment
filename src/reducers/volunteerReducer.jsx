@@ -6,7 +6,7 @@ const initialState = {
             id:1,name:'Rajesh',
             occupation:'Engineer',
             specializedAreas : 'can talk about technology, marketing',
-            email : 'johndoe@gmail.com',
+            email : 'rajesh@gmail.com',
             phone : '111-111-1111',
             about:'A passionate person who is into technology and likes to help other people suffering from depression'
         },
@@ -14,11 +14,11 @@ const initialState = {
         {
             id:2,
             name:'Ajay',
-            occupation:'Student',
-            specializedAreas : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, atque', 
-            email : 'johndoe@gmail.com',
+            occupation:'Student in Finance',
+            specializedAreas : 'Can give career motivation, and can talk about managing your finances', 
+            email : 'ajay@gmail.com',
             phone : '111-111-1111',
-            about:'Lorem ipsum dolor sit Fugit itaque perferendis reprehenderit officiis provident et itaque quidem modi repellendus aliquid '
+            about:'An avid reader, writer, and a basketball player. Stays in the vicinity of Hyderabad. He can talk to any person who has problems related to finance.'
         },
 
         {
@@ -28,12 +28,12 @@ const initialState = {
             specializedAreas : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, atque',
             email : 'johndoe@gmail.com',
             phone : '111-111-1111',
-            about:'Lorem ipsum dolor sit Fugit itaque perferendis reprehenderit officiis provident et itaque quidem modi repellendus aliquid '
+            about:'He has gone through his fair share of troubles but has emerged victorious. He can give you great advices and can help you in deciding about your future.'
         },
         
         {
             id:4,
-            name:'Aditya',
+            name:'Sowmya',
             occupation:'Researcher',
             specializedAreas : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, atque',
             email : 'johndoe@gmail.com',
@@ -43,7 +43,7 @@ const initialState = {
 
         {
             id:5,
-            name:'Jhon',
+            name:'John',
             occupation:'Researcher',
             specializedAreas : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, atque',
             email : 'johndoe@gmail.com',

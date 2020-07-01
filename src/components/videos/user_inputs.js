@@ -5,12 +5,10 @@ import { connect } from 'react-redux';
 import { getUserChoice , updateUserChoice } from '../../actions/UserActions';
 import PropTypes from 'prop-types';
 import "./complete.css";
-import db from '../../firebase'
+import db from '../../firebase';
 
 const UserInputs=(props) =>{
     
-        
-        
         const state = {
             nameS:'',
             value1:'',
@@ -60,7 +58,7 @@ const UserInputs=(props) =>{
                 console.log("Document data:", doc.data());
             }else {
                 // doc.data() will be undefined in this case
-                db.collection('users').doc(props.user.uid).set({'VideoSearchM':" ",UserVideo:0})
+                db.collection('users').doc(props.user.uid).set({'VideoSearchM':" ",'UserVideo':0})
                 console.log("No such document!",doc.data());
             }
 }).then((doc)=>{
@@ -86,7 +84,7 @@ const UserInputs=(props) =>{
                         console.log("Document data:", doc.data());
                     } else {
                         // doc.data() will be undefined in this case
-                        db.collection('users').doc(props.user.uid).set({'VideoSearchM':str,UserVideo:0})
+                        db.collection('users').doc(props.user.uid).set({'VideoSearchM':str,'UserVideo':0})
                         console.log("No such document!",doc.data());
                     }
                     return doc

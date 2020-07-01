@@ -1,5 +1,6 @@
 import React from 'react';
-
+import About from '../pages/About';
+import { Link } from '@reach/router';
 
 export default function Footer() {
     return (
@@ -13,7 +14,7 @@ export default function Footer() {
                     </div>
                     <div class="col">
                         <h5>Quick Links</h5>
-                        <a href="about.html" class="h6 text-info">About</a><br></br>
+                        <Link to="/about" class="h6 text-info">About</Link><br></br>
                     </div>
                 </div>
             </div>

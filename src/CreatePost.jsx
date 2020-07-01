@@ -41,17 +41,17 @@ const CreatePost=(props)=>{
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <Link to="/postapp" style={{ float:'right'}}>Posts</Link>
+                        <Link to="/postapp" className="mr-3">Posts</Link>
                     </li>
                     {props.user && 
                        <li class="nav-item">
-                        <Link to="/create_post" style={{ float:'right'}}>Create Posts</Link>
+                        <Link to="/create_post" className="mr-3">Create Posts</Link>
                        </li>
 
                     }
                      {props.user &&
                        <li class="nav-item">
-                         <Link to={`/blogs/${props.user.uid}/posts`} style={{ float:'right'}}>My Posts</Link>
+                         <Link to={`/blogs/${props.user.uid}/posts`} className="mr-3"><i className="fa fa-certificate"></i>My Posts</Link>
                        </li>
                     }
                 </ul>

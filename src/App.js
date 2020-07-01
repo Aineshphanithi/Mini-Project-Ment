@@ -6,8 +6,8 @@ import MentTransparent from './components/Images/MentTransparent.png';
 import CreatePost from './CreatePost'
 import{Router,Link, navigate} from "@reach/router"
 import UpdatePost from './UpdatePost';
-import SignIn from './SignIn'
-import SignUp from './SignUp'
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
 //import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import {auth} from './firebase'
 import PostApp from './PostApp';
@@ -60,7 +60,6 @@ function App(props){
           // ...
         }
       });
-
       const onSignOut=()=>{
         console.log('signing out',props)
         auth.signOut().then(function(){
