@@ -17,6 +17,12 @@ const PostSnippet=(props) => {
         }
         
     })
+    const onDeletePost=()=>{
+        console.log('post being deleted')
+        let postRef=db.collection('posts').doc(props.Did)
+        postRef.delete()
+    
+    }
     
     return (
         <div class="postSnippet_container mx-3">
@@ -28,6 +34,9 @@ const PostSnippet=(props) => {
                          <Link to={`/update_post/${props.Did}`} style ={{marginRight:'15px'}}>
                             edit
                         </Link>
+                        <a onClick ={onDeletePost}>
+                            delete
+                        </a>
                         </div>
                     }</h5>
                 <div class="card-body">
