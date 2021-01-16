@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react'
 //import {Card} from 'antd';
 import {Link, navigate} from "@reach/router"
 import db from './firebase'
+import './components/videos/complete.css'
+import ParticlesBg from 'particles-bg';
 import CommentSnipet from'./AddComment';
 import _ from 'lodash'
 
@@ -46,7 +48,7 @@ const CreateComment=(props) => {
     return (
         <div className="postSnippet_container">
             
-            <div class="card mx-5 my-3" >
+            <div class="cardp mx-5 my-3" >
                 <h5 class="card-header">{title}</h5>
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
@@ -77,7 +79,7 @@ const CreateComment=(props) => {
                     
                 
             </div>
-
+            <ParticlesBg type="cobweb" style ={{height:100+"%"}} bg = {true}/>
         </div>
     )
 }

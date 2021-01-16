@@ -2,7 +2,8 @@ import React ,{useState}from 'react'
 import Posts from  './Posts'
 import Post from './Post'
 import CreatePost from './CreatePost'
-import{Router,Link} from "@reach/router"
+import{Router,Link} from "@reach/router";
+import ParticlesBg from 'particles-bg';
 //import { Menu } from 'antd';
 import UpdatePost from './UpdatePost';
 import SignIn from './components/auth/SignIn';
@@ -39,7 +40,7 @@ function PostApp(props){
                 </ul>
             </div>
             </nav>
-              
+            <ParticlesBg type="cobweb" style ={{height:100+"%"}} bg = {true}/>
                   
                   
                   <Posts/>

@@ -3,6 +3,8 @@ import React ,{useState,useEffect}from 'react'
 import MyPostsSnippet from './MyPostsSnippet';
 import _ from 'lodash'
 import db from './firebase';
+import './components/videos/complete.css'
+import ParticlesBg from 'particles-bg';
 //import { Menu } from 'antd';
 //import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import{Router,Link} from "@reach/router"
@@ -49,7 +51,7 @@ const MyPosts=(props)=>{
                 </ul>
             </div>
             </nav>
-        <div className ="page_header_container">
+        <div className =" page_header_container">
             {/* <PageHeader
                 style={{
                     border: '1px solid rgb(235, 237, 240)',
@@ -58,7 +60,7 @@ const MyPosts=(props)=>{
             />
              */}
              <h2>Posts</h2>
-        </div>
+        
         <div className="articles_container">
             {
                 _.map(posts,(article,idx)=>(
@@ -77,7 +79,8 @@ const MyPosts=(props)=>{
             }
             
         </div>
-        
+        </div>
+        <ParticlesBg type="cobweb" style ={{height:100+"%"}} bg = {true}/>
 
     </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./complete.css"
+import "./complete.css";
 
 const VideoListItem = (props) => {
     
@@ -9,9 +9,9 @@ const VideoListItem = (props) => {
 
     return(
         //<li onClick={() => onUserSelected(video)} className="list-group-item">
-        <div className="list-group-item videoList">
+        <div className="list-group-item videoList bg-dark cardl " style={{padding: 10+"px", margin:10+"px"}}>
            
-           <div classname="video-list media">
+           <div classname="video-list media"  style={{padding: 10+"px"}}>
 	            <div classname="media-left" >
 		            <img id="thumbStyle" src={imageUrl}/>
 	            </div>
@@ -20,9 +20,9 @@ const VideoListItem = (props) => {
 	            </div>
             </div>
         </div>
-        // <div className="list-group-item videoList" >
+        // <div className="list-group-item videoList bg-dark cardl " style={{padding: 10+"px", margin:10+"px"}}>
            
-        //    <div classname="video-list media">
+        //    <div classname="video-list media" style={{padding: 10+"px"}}>
 	    //         <div classname="media-left" >
 		//             <img id="thumbStyle" src="https://i.ytimg.com/vi/L2dguyFo82w/default.jpg"/>
 	    //         </div>

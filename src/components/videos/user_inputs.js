@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import ParticlesBg from 'particles-bg';
 import { Link,navigate } from '@reach/router';
 import { connect } from 'react-redux';
 import { getUserChoice , updateUserChoice } from '../../actions/UserActions';
@@ -98,59 +98,66 @@ const UserInputs=(props) =>{
             navigate('/videos')
         })
        
-       // console.log(state);
-        // setState({name:" "});
+        console.log(state);
+        //setState({name:" "});
         
 
     }
     
     
         return(
-            <div >
-                <h1>Please Answer these questions for getting Curated content</h1>
-                <form align="center">
-                    {/* <label>
-                        type here:<input type="text" value={state.value} onChange={handelChange}/>
-                    </label> */}
-                    <br/>
-                    
-                    <div className="formMain">
-                    <div id="formP">
-                        <h2>Have You gone through any of these situatons?</h2>
-                        <input  type ="checkbox" id = " cb1" name="value1" value=" abuse" onChange={handelChange}/>
-                        <label   >Abused</label>
-                        <br/>
-                        <input   type ="checkbox" id = " cb2" name="value2" value=" drugs" onChange={handelChange}/>
-                        <label   >Drug Addict</label>
-                        <br/>
-                        <input   type ="checkbox" id = " cb3" name="value3" value=" stress" onChange={handelChange}/>
-                        <label  >Work stress</label>
-                        <br/>
-                        <input   type ="checkbox" id = " cb4" name="value4" value=" relationship" onChange={handelChange}/>
-                        <label   >Relationship Problems</label>
-                        <br/>
-                        <label   >other problems: </label>
-                        <input   type ="text" id = "cb5" name="value5" value={state.value} onChange={handelChange}/>
+        <div className="form-bg ">
+
+            <div className="container">
+                <div className="row">
+                    <div className="col card mx-5 my-5" id="first">
                         
-                        <br/>
-                        <input   type ="checkbox" id = "cb6" name="value6" value=" " onChange={handelChange}/>
-                        <label   >None</label>
-                        <br/>
-                    </div>
-                    </div>
-                    <br/>
-                    
-                    <br/>
-                    <label >
-                        <input id="btnforChange" type="submit" value="Save & Proceed" onClick={handelSubmit}/>
-                    </label>
+                        <form align="center">
+                            <h4>Please Answer these questions for getting Curated content</h4>
+                            
+                                <h5>Have You gone through any of these situatons?</h5>
+                                    <div className="col m-5" align="left">
+                                        <input  type ="checkbox" id = " cb1" name="value1" value=" abuse" onChange={handelChange}/>
+                                        <label   >Abused</label>
+                                        <br/>
+                                        <input   type ="checkbox" id = " cb2" name="value2" value=" drugs" onChange={handelChange}/>
+                                        <label   >Drug Addict</label>
+                                        <br/>
+                                        <input   type ="checkbox" id = " cb3" name="value3" value=" stress" onChange={handelChange}/>
+                                        <label  >Work stress</label>
+                                        <br/>
+                                        <input   type ="checkbox" id = " cb4" name="value4" value=" relationship" onChange={handelChange}/>
+                                        <label   >Relationship Problems</label>
+                                        <br/>
+                                        {/* <label   >other problems: </label>
+                                            <input   type ="text" id = "cb5" name="value5" value={state.value} onChange={handelChange}/> */}
+                                        <label class="one">
+                                            <span>Other Problems :</span>&nbsp;
+                                            <input class="name" name="dname" type ="text" id = "cb5" name="value5" value={state.value} onChange={handelChange}/>
+                                        </label>
+                                        <br/>
+                                        <input   type ="checkbox" id = "cb6" name="value6" value=" " onChange={handelChange}/>
+                                        <label   >None</label>
+                                        <br/>
+                                        </div>
+                            
+                            <br/>
+                            <label >
+                                <input className="btn btn-primary mx-3" id="btnforChange" type="submit" value="Save & Proceed" onClick={handelSubmit}/>
+                            </label>
 
-                    <label >
-                        <input id="btnforChange" type="button" value="skip" onClick={handelSkip}/>
-                    </label>
+                            <label >
+                                <input className="btn btn-primary mx-3" id="btnforChange" type="button" value="skip" onClick={handelSkip}/>
+                            </label>
 
-                </form>
+                        </form>
+                    </div>
+                </div>
             </div>
+            <ParticlesBg type="circle" bg = {true}/>
+	    </div>
+        
+
         );
     
 }

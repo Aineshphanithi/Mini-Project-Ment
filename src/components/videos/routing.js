@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import { connect } from 'react-redux';
 import { GET_VOLUNTEERS } from '../../actions/types';
-
+import ParticlesBg from 'particles-bg';
 import SearchBar from './search_bar';
 import YTSearch from 'youtube-api-search';
 import VideoList from './video_list';
@@ -10,7 +10,7 @@ import VideoDetail from './video_details';
 import "./complete.css"
 import db from '../../firebase'
 import { navigate } from '@reach/router';
-const API_KEY ="AIzaSyALY8xL3Y85VTF27ABKdd4HRTihe13beAA";//"AIzaSyDE2WFy_oZsNwPSnFdKbMBtcXfV68UVkDM"
+const API_KEY ="AIzaSyDd-dqSJ53e_p-etO6hdB7EA-E2Nri7Lyw";//"AIzaSyDE2WFy_oZsNwPSnFdKbMBtcXfV68UVkDM" 	AIzaSyBS7YzMWkBVZWUl1j4Oc1b_dd-fEvsQprs AIzaSyDd-dqSJ53e_p-etO6hdB7EA-E2Nri7Lyw
 
 
 
@@ -22,8 +22,9 @@ class CuratedContents extends Component{
       this.state = {
         index: 0,
         indexm:0,
-        videos: [],
-        motivates: ["Talk to friends or family face-to-face",
+        //videos: ['https://youtu.be/iRN62IebC04','https://youtu.be/FSVHx23ByhM','https://youtu.be/vG12FW5lMWc','https://youtu.be/1LfdbHI4oDE','https://youtu.be/-uEc8_dcYUc'],
+       videos:[], 
+       motivates: ["Talk to friends or family face-to-face",
           "Spend some time in nature",
           "Read a good book",
           "List what you like about yourself",
@@ -45,7 +46,7 @@ class CuratedContents extends Component{
       var dataset
       db.collection('users').doc(this.props.user.uid).get().then(function(doc){
         if (doc.exists) {
-            //searchTerm=searchTerm+doc.data.videoSearchM;
+           // searchTerm=searchTerm+doc.data.videoSearchM;
             dataset=doc.data();
             console.log("Document data in video:", doc.data(),dataset.UserVideo,dataset.VideoSearchM);
                   
@@ -67,7 +68,7 @@ class CuratedContents extends Component{
             this.videoSearch(userVideos);
           })
             
-          
+          //this.videoSearch(userVideos);//this is only for testing
           
           //this.state.selectVideo=this.state.videos[this.state.index];
         }
@@ -99,8 +100,9 @@ class CuratedContents extends Component{
   
   render(){
     console.log(this.state)
+    
     return(
-      <div className="videos">
+      <div className="videos text-light" >
         
         <SearchBar onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}/>
         <div class="row">
@@ -113,7 +115,7 @@ class CuratedContents extends Component{
             />
         
           </div>
-          <div className="col-md ml-5">
+          <div className="col-md ml-5 scroll">
             <VideoList
               onVideoSelect={userSelected => this.setState({selectedVideo: userSelected})}
               completed={this.state.completed}
@@ -126,7 +128,9 @@ class CuratedContents extends Component{
               indexMChange = {indexMo => this.setState({indexm: indexMo})}
             />
           </div>
+          
         </div>
+        <ParticlesBg type="lines" bg = {true}/>
       </div>
     );
   }

@@ -3,8 +3,9 @@ import React,{useState} from 'react';
 import {auth} from '../../firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import "../videos/complete.css"
+import './sign.css';
 import firebase from 'firebase';
-
+import ParticlesBg from 'particles-bg';
 const SignUp = (props) => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
@@ -35,6 +36,32 @@ const SignUp = (props) => {
         }
         
     }
+    let config = {
+        
+        num: [4, 7],
+        rps: 0.1,
+        radius: [5, 40],
+        life: [1.5, 3],
+        v: [2, 3],
+        tha: [-40, 40],
+        //body: "MentTransparent.png", // Whether to render pictures
+        rotate: [0, 20],
+        alpha: [0.6, 0],
+        scale: [1, 0.1],
+        position: "all", // all or center or {x:1,y:1,width:100,height:100}
+        color: ["random", "#ff0000"],
+        cross: "dead", // cross or bround
+        random: null,  // or null,
+        g: 1,    // gravity
+        // f: [2, -1], // force
+        onParticleUpdate: (ctx, particle) => {
+            ctx.beginPath();
+            ctx.rect(particle.p.x, particle.p.y, particle.radius * 0.5, particle.radius * 0.5);
+            ctx.fillStyle = particle.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+      };
     const uiConfig = {
         // Popup signin flow rather than redirect flow.
        signInFlow: 'popup',
@@ -87,7 +114,7 @@ const SignUp = (props) => {
                 </div>
             </div>
         </div>
-        
+        <ParticlesBg type="custom" config={config} bg={true} />
     </div>
     )
 }

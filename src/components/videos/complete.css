@@ -81,7 +81,7 @@
   width: inherit;
   border-style: ridge;
   border-width: 2px;
-  padding: 10px;
+  padding: 2px;
   margin:2px;
 }
 #thumbStyle{
@@ -106,7 +106,7 @@
 .videoDiv{
   position: fixed;
 }
-
+/* 
 .btnforChange{
   float: right;
   color:black;
@@ -124,7 +124,7 @@
   opacity: 0.7;
   font: bold;
   cursor: pointer;
-}
+} */
 #btnforChange:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -150,3 +150,57 @@
 .Sign_up_container{
   margin-bottom: 140px;
 }
+
+#first{
+  border: 0px solid #fff;
+    margin-top: 30px;
+    margin-bottom: 200px;
+    padding: 130px;
+    background-color: transparent;
+    
+    font-weight: bold;
+    -webkit-box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+    height: 90%;
+}
+
+.scroll{
+  height: 760px;
+
+  
+  overflow-y: auto;
+}
+.scroll-scrollbar{
+  width: 3px;
+}
+.cardp{
+  border: 0px solid #fff;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 35px;
+
+  background-color: transparent;
+  opacity: 0.7;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+  height: 90%;
+}
+
+.cardl{
+  border: 0px solid #fff;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 35px;
+  width:70%;
+  background-color: transparent;
+  opacity: 0.7;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 6px 35px 8px rgba(0, 0, 0, 0.75);
+  height: 90%;
+}
+

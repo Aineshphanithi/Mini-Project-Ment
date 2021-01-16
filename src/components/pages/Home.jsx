@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import image1 from '../Images/image1.jpg';
 import image2 from '../Images/image2.jpg';
+import ParticlesBg from 'particles-bg';
 import image3 from '../Images/image3.jpg';
 import doc from '../Images/doc.jpg';
 import Header from '../layout/Header';
@@ -12,7 +13,7 @@ class Home extends Component {
     render() {
         return (
             <>
-
+             
             <section id="showcase">
             <div id="myCarousel" className="carousel slide" data-ride="carousel">
                 <ol className="carousel-indicators">
@@ -97,18 +98,25 @@ class Home extends Component {
 
                         
             <section id="info" class="py-3">
+            
                 <div class="container">
+                    
+                
                     <div class="row">
+                    
                     <div class="col-md-8 align-self-center">
                         <h3>Talk to our experts</h3>
                         <p>We have a team of volunteers who are active in the application. They will always be ready to listen to your concerns and will also give you good suggestions.
                         </p>
+                        
                         <Link to="/volunteers" className="btn btn-outline-danger btn-lg">Learn More</Link>
                     </div>
                     <div class="col-md-4">
                         <img src={doc} alt="" class="img-fluid" />
                     </div>
                     </div>
+                    
+
                 </div>
             </section>
 

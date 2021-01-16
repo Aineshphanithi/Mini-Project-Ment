@@ -3,6 +3,8 @@ import React,{useState} from 'react'
 import db from './firebase'
 import { navigate } from "@reach/router"
 //import { Menu } from 'antd';
+import './components/videos/complete.css'
+import ParticlesBg from 'particles-bg';
 import { Envelope, ColumnsGap, CardList} from 'react-bootstrap-icons';
 import{Router,Link} from "@reach/router"
 
@@ -36,9 +38,9 @@ const CreatePost=(props)=>{
 
     return(
         
-        <div className="create_post_container">
+        <div className=" create_post_container">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="c collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <Link to="/postapp" className="mr-3">Posts</Link>
@@ -58,7 +60,7 @@ const CreatePost=(props)=>{
             </div>
           </nav>
             
-        <div className ="page_header_container">
+        <div className =" cardp page_header_container">
             {/* <PageHeader
                 style={{
                     border: '1px solid rgb(235, 237, 240)',
@@ -66,7 +68,8 @@ const CreatePost=(props)=>{
                 title="Create Post"
             /> */}
             <h3>Create Post</h3>
-        </div>
+        
+        
         <div className="post_inputs_container">
             <div className="post_input_container">
                 <div className="post_input_title">
@@ -92,6 +95,9 @@ const CreatePost=(props)=>{
                 </button>
             </div>
           </div>
+          </div>  
+          <ParticlesBg type="cobweb" style ={{height:100+"%"}} bg = {true}/>
+
         </div>
     )
 }

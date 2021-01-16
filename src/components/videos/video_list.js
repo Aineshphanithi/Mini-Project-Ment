@@ -21,7 +21,7 @@ const VideoList = (props) => {
         <VideoListItem
             //onUserSelected={props.onVideoSelect}
             
-            //key={video.etag}
+            //key={video.etag}0
             video={video} 
         />
         );

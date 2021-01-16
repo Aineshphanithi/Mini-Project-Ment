@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import android from '../Images/android.png';
 export default class About extends Component {
     render() {
