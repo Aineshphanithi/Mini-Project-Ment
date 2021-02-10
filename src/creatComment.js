@@ -69,7 +69,7 @@ const CreateComment=(props) => {
                 
                 <div class="row">
                     <div class="col-sm-4 ml-5"><button type="button" class="btn btn-primary" onClick={handelComment}>Add Comment</button></div>
-                    <div class="col-sm-6"><input type="text" class="form-control" value={input} onChange={handelChange}/></div>
+                    <div class="col-sm-6 border border-primary rounded"><input type="text" class="form-control" value={input} onChange={handelChange}/></div>
                 </div>
 
                 {Object.keys(comments).length >0 ? _.map(comments,(article,idx)=>(
