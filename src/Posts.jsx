@@ -24,7 +24,7 @@ const Posts=(props)=>{
                 })
     },[])
     return(
-    <div className="posts_container">
+    <div className="posts_container scroll">
         <div className ="page_header_container">
             {/* <PageHeader
                 style={{

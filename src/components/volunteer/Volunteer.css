@@ -46,3 +46,13 @@
     color: white;
     transform: rotateY(180deg);
   }
+  /* For scrolling */
+  .scroll{
+    height: 768px;
+  
+    
+    overflow-y: auto;
+  }
+  .scroll-scrollbar{
+    width: 3px;
+  }

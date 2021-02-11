@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import Volunteer from './Volunteer';
 import { connect } from 'react-redux';
+import ParticlesBg from 'particles-bg';
 import { GET_VOLUNTEERS } from '../../actions/types';
-// Ainesh's work
-// once the user clicks connect, he should be relocated to the calendar to fix a date. the date shoudld be updated with the volunteer and the user.
-// The user should be able to text the volunteer at that time.
-// Implement Login functionality also.
 
  class Volunteers extends Component {
     
     render() {
         console.log(this.state);
         return (
-            <div>
+            <div className="scroll">
                 <Volunteer/>
                 
-                
+                <ParticlesBg type="round" bg = {true}/>
             </div>
         )
     }
